@@ -15,22 +15,29 @@ body {
     background-color: #000;
 }
 
+/* 2. Header Styling (Floating Top) */
 header {
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 40px;
+    padding: 30px; /* Adjusted padding for better logo placement */
     display: flex;
     justify-content: center;
     z-index: 10;
 }
 
-.logo {
-    font-size: 1.2rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: white;
+/* NEW: Image Logo Styling */
+.brand-logo {
+    height: 60px; /* Adjust this number to make logo bigger/smaller */
+    width: auto;  /* Keeps the aspect ratio perfect */
+    display: block;
+}
+
+/* Mobile Tweak: Make logo slightly smaller on phones */
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 45px;
+    }
 }
 
 .hero {
@@ -41,7 +48,7 @@ header {
     justify-content: center;
     text-align: center;
     
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=2831&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1516242981651-2ee338449dea?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
 }
@@ -72,14 +79,11 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    
     padding: 30px 20px;
     text-align: center;
     z-index: 10;
-    
-    /* Typography */
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-links {
@@ -87,16 +91,17 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: #ffffff;
     margin: 0 15px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    opacity: 0.85;
     transition: opacity 0.3s;
 }
 
 .footer-links a:hover {
-    opacity: 0.6;
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
