@@ -15,25 +15,22 @@ body {
     background-color: #000;
 }
 
-/* 2. Header Styling (Floating Top) */
 header {
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 30px; /* Adjusted padding for better logo placement */
+    padding: 30px;
     display: flex;
     justify-content: center;
     z-index: 10;
 }
 
-/* NEW: Image Logo Styling */
 .brand-logo {
-    height: 60px; /* Adjust this number to make logo bigger/smaller */
-    width: auto;  /* Keeps the aspect ratio perfect */
+    height: 60px; 
+    width: auto;  
     display: block;
 }
 
-/* Mobile Tweak: Make logo slightly smaller on phones */
 @media (max-width: 768px) {
     .brand-logo {
         height: 45px;
@@ -73,6 +70,30 @@ header {
     font-weight: 300;
     opacity: 0.9;
     text-transform: uppercase;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    
+    background-color: #ffffff;
+    color: #000000;
+    
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    
+    border-radius: 50px;
+    border: none;
+    
+    transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 footer {
