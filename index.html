@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>CHAPÉU&CANETA® | Futebol é Arte</title>
+    <link rel="canonical" href="https://chapeuecaneta.com.br/">
+    <meta name="title" content="CHAPÉU&CANETA® | Futebol é Arte" />
+    <meta name="description" content="Drible curto, futebol moleque e resenha garantida. Nascemos para transformar a alma do futebol arte em roupa. Peças casuais para quem vive o jogo além dos 90 minutos." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chapeuecaneta.com.br/" />
+    <meta property="og:title" content="CHAPÉU&CANETA® | Futebol é Arte" />
+    <meta property="og:description" content="Drible curto, futebol moleque e resenha garantida. Nascemos para transformar a alma do futebol arte em roupa." />
+    <meta property="og:image" content="https://chapeuecaneta.com.br/assets/share-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://chapeuecaneta.com.br/" />
+    <meta property="twitter:title" content="CHAPÉU&CANETA® | Futebol é Arte" />
+    <meta property="twitter:description" content="Drible curto, futebol moleque e resenha garantida. Nascemos para transformar a alma do futebol arte em roupa." />
+    <meta property="twitter:image" content="https://chapeuecaneta.com.br/assets/share-image.jpg" />
+
+    <meta name="theme-color" content="#050505">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
     
     <link rel="icon" type="image/png" href="assets/favicon.ico">
     
@@ -11,6 +32,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="assets/hero-desktop.webp" media="(min-width: 769px)">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR2CXXT31V"></script>
     <script>
@@ -23,87 +47,128 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "CHAPÉU&CANETA®",
+          "url": "https://chapeuecaneta.com.br/",
+          "logo": "https://chapeuecaneta.com.br/assets/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/lojachapeuecaneta",
+            "https://www.facebook.com/lojachapeuecaneta",
+            "https://www.tiktok.com/@lojachapeuecaneta"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contato@chapeuecaneta.com.br",
+            "contactType": "customer service"
+          }
+        }
+    </script>
 </head>
 <body>
 
     <header>
         <img src="assets/logo.svg" alt="CHAPÉU&CANETA Logo" class="brand-logo">
     </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>FUTEBOL É ARTE,<br>O RESTO É ESPORTE.</h1>
+                <p>Roupas casuais para quem vive o jogo além dos 90 minutos.</p>
+                <a href="https://loja.chapeuecaneta.com.br" class="cta-button">Acessar Loja Oficial</a>
+            </div>
+        </section>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>FUTEBOL É ARTE,<br>O RESTO É ESPORTE.</h1>
-            <p>Roupas casuais para quem vive o <br>
-                 jogo além dos 90 minutos.</p>
-            <a href="https://loja.chapeuecaneta.com.br" class="cta-button">Acessar Loja Oficial</a>
-        </div>
-    </section>
+        <section class="manifesto">
+            <div class="container">
+                <h2 class="main-statement">
+                    A CHAPÉU&CANETA® nasceu para tirar a camisa de time do estádio e levar para a rua.
+                </h2>
+                <h3 class="sub-statement">
+                    Design autoral, algodão premium e a história do futebol estampada no peito.
+                </h3>
+            </div>
+        </section>
 
-    <section class="manifesto">
-        <div class="container">
-            <h2 class="main-statement">
-                A CHAPÉU&CANETA® nasceu para tirar a camisa de time do estádio e levar para a rua.
-            </h2>
-            <h3 class="sub-statement">
-                Design autoral, algodão premium e a história do futebol estampada no peito.
-            </h3>
-        </div>
-    </section>
+        <section class="products">
+            <div class="">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <a href="https://loja.chapeuecaneta.com.br/chapeuecaneta/product/brasil-pentacampeao-nossa-historia" class="product-card">
+                                <div class="image-mask">
+                                    <img 
+                                        src="assets/produto-1.webp" 
+                                        alt="Camiseta Brasil Pentacampeão - Nossa História" 
+                                        class="product-image"
+                                        loading="lazy" 
+                                        width="600"  height="600" >
+                                </div>
+                                <span class="product-name">Nossa História</span>
+                            </a>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <a href="https://loja.chapeuecaneta.com.br/chapeuecaneta/product/brasil-raiz" class="product-card">
+                                <div class="image-mask">
+                                    <img 
+                                    src="assets/produto-2.webp" 
+                                    alt="Camiseta Brasil Raiz" 
+                                    class="product-image"
+                                    loading="lazy" 
+                                    width="600"  height="600" >
+                                </div>
+                                <span class="product-name">Brasil Raiz</span>
+                            </a>
+                        </div>   
+                        <div class="swiper-slide">
+                            <a href="https://loja.chapeuecaneta.com.br/chapeuecaneta/product/brasil-2026" class="product-card">
+                                <div class="image-mask">
+                                    <img 
+                                        src="assets/produto-4.webp" 
+                                        alt="Brasil 2026" 
+                                        class="product-image"
+                                        loading="lazy"  
+                                        width="600"  height="600" >
+                                </div>
+                                <span class="product-name">Brasil 2026</span>
+                            </a>
+                        </div>
 
-    <!-- <section class="products">
-        <div class="">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    
-                    <div class="swiper-slide">
-                        <a href="#" class="product-card">
-                            <div class="image-placeholder" style="background-color: #ccc;"></div>
-                            <span class="product-name">Camiseta XYZ</span>
-                        </a>
+                        <div class="swiper-slide">
+                            <a href="https://loja.chapeuecaneta.com.br/chapeuecaneta/product/distorcao-pura" class="product-card">
+                                <div class="image-mask">
+                                    <img 
+                                        src="assets/produto-5.webp" 
+                                        alt="Distorção Pura" 
+                                        class="product-image"
+                                        loading="lazy" 
+                                        width="600"  height="600" >
+                                </div>
+                                <span class="product-name">Distorção Pura</span>
+                            </a>
+                        </div>
+
                     </div>
-                    
-                    <div class="swiper-slide">
-                        <a href="#" class="product-card">
-                            <div class="image-placeholder" style="background-color: #555;"></div>
-                            <span class="product-name">Camiseta ABC</span>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="#" class="product-card">
-                            <div class="image-placeholder" style="background-color: #eee;"></div>
-                            <span class="product-name">Moletom 456</span>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="#" class="product-card">
-                            <div class="image-placeholder" style="background-color: #333;"></div>
-                            <span class="product-name">Cropped Fã</span>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="#" class="product-card">
-                            <div class="image-placeholder" style="background-color: #777;"></div>
-                            <span class="product-name">Moletom SUP</span>
-                        </a>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section> -->
+        </section>
+    </main>
 
     <footer class="big-footer">
         <div class="container">
             <nav class="footer-nav">
-                <a href="https://www.tiktok.com/@lojachapeuecaneta" target="_blank">TikTok</a>
-                <a href="https://www.instagram.com/lojachapeuecaneta" target="_blank">Instagram</a>
-                <a href="https://www.facebook.com/lojachapeuecaneta" target="_blank">Facebook</a>
-                <a href="https://wa.me/message/34MZJFGGE5RSK1" class="footer-nav-sm">Whatsapp</a>
-                <a href="mailto:contatochapeuecaneta@gmail.com" class="footer-nav-sm">Email</a>
+                <a href="https://www.tiktok.com/@lojachapeuecaneta" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="https://www.instagram.com/lojachapeuecaneta" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/lojachapeuecaneta" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://wa.me/message/34MZJFGGE5RSK1" class="footer-nav-sm" rel="noopener noreferrer">Whatsapp</a>
+                <a href="mailto:contato@chapeuecaneta.com.br" class="footer-nav-sm" rel="noopener noreferrer">Email</a>
             </nav>
             
             <div class="copyright">
@@ -131,11 +196,6 @@
             observeParents: true,
 
             breakpoints: {
-                320: {
-                    slidesPerView: 2.2, 
-                    slidesOffsetBefore: 20, 
-                    slidesOffsetAfter: 20,
-                },
                 640: {
                     slidesPerView: 2.2, 
                     slidesOffsetBefore: 20, 
