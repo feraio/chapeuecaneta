@@ -10,6 +10,13 @@
     --text-white: #fefefe;
     --font-display: "Boldonse", system-ui; 
     --font-body: 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
+    --hello-bar-height: 40px; 
+}
+
+@media (max-width: 768px) {
+    :root {
+        --hello-bar-height: 56px; 
+    }
 }
 
 ::selection {
@@ -45,9 +52,13 @@ header {
 }
 
 .brand-logo {
+    position: absolute;
+    top: calc(20px + var(--hello-bar-height));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     height: 28px; 
     width: auto;  
-    display: block;
 }
 
 .hero {
@@ -63,6 +74,7 @@ header {
     text-align: center;
     
     padding-bottom: 8vh; 
+    padding-top: var(--hello-bar-height);
     
     background-image: url('assets/hero-mobile.webp'); 
     background-size: cover;
@@ -298,4 +310,21 @@ header {
     
     .footer-nav a { font-size: 2.2rem; }
     .footer-nav a.footer-nav-sm { font-size: 1.2rem; }
+}
+
+.hello-bar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 100;
+    letter-spacing: 0.5px;
 }
