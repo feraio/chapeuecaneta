@@ -13,11 +13,11 @@
     --hello-bar-height: 40px; 
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     :root {
         --hello-bar-height: 56px; 
     }
-}
+} */
 
 ::selection {
     background-color: var(--primary-yellow);
@@ -295,7 +295,7 @@ header {
 }
 
 @media (max-width: 768px) {
-    .brand-logo { height: 28px; }
+    .brand-logo { height: 28px; top: 20px; }
     
     .hero h1 { font-size: 1.8rem; }
     .hero p { text-wrap: balance; }
@@ -310,6 +310,8 @@ header {
     
     .footer-nav a { font-size: 2.2rem; }
     .footer-nav a.footer-nav-sm { font-size: 1.2rem; }
+
+    .hello-bar { display: none; }
 }
 
 .hello-bar {
@@ -327,4 +329,10 @@ header {
     text-transform: uppercase;
     z-index: 100;
     letter-spacing: 0.5px;
+}
+
+.hello-bar-link {
+    color: var(--primary-yellow);
+    text-decoration: underline;
+    font-weight: 700;
 }
