@@ -121,7 +121,7 @@ header {
 
 .hero h1 {
     font-family: var(--font-display);
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 140%;
     margin-bottom: 15px;
     text-transform: uppercase;
