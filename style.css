@@ -61,53 +61,37 @@ header {
     width: auto;  
 }
 
+/* Hero sem foto. A imagem anterior trazia nomes de jogadores reais e saiu junto com a linha Lendas.
+   Quando entrar a foto nova, devolver background-image aqui e no media query de 769px,
+   e voltar com os dois <link rel="preload"> no index.html. */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 72vh;
     width: 100%;
     
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     
     text-align: center;
     
     padding-bottom: 8vh; 
-    padding-top: var(--hello-bar-height);
+    padding-top: calc(var(--hello-bar-height) + 8vh);
     
-    background-image: url('assets/hero-mobile.webp'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--bg-black);
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    background: linear-gradient(
-        to bottom, 
-        rgba(0,0,0,0.3) 0%,
-        transparent 20%,        
-        transparent 50%,        
-        rgba(17, 17, 17, 0.8) 80%,
-        #111111 100%
-    );
-    
-    z-index: 1;
-    pointer-events: none;
+.hero-eyebrow {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    color: var(--primary-yellow);
+    margin-bottom: 20px !important;
 }
 
 @media (min-width: 769px) {
     .hero {
-        background-image: url('assets/hero-desktop.webp');
-        background-position: center top;
-        padding-bottom: 8vh; 
+        min-height: 80vh;
     }
 }
 
