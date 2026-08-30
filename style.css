@@ -83,13 +83,11 @@ header {
     object-position: center;
 }
 
-/* O eyebrow vem depois do bloco branco, colado nele: o respiro fica todo embaixo, antes do CTA.
-   O !important é porque ".hero p" tem especificidade maior e este elemento também é um <p>. */
-.hero-eyebrow {
-    font-size: 0.85rem !important;
-    letter-spacing: 2px !important;
+/* O nome da coleção vive dentro da frase, em amarelo, em vez de ser uma linha solta acima da
+   headline. Só cor e peso: nada de tamanho ou tracking próprios, senão quebra o ritmo da frase. */
+.hero-destaque {
     color: var(--primary-yellow);
-    margin-bottom: 25px !important;
+    font-weight: 400;
 }
 
 /* Caixa de texto na metade livre da esquerda: margem de 5% e largura de 45%, o que mantém a
@@ -127,7 +125,7 @@ header {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0px;
-    margin-bottom: 8px; /* pequeno: o eyebrow amarelo vem logo abaixo, encostado */
+    margin-bottom: 25px;
 }
 
 .cta-button {
@@ -292,18 +290,21 @@ header {
 
     /* Em retrato a área livre deixa de ser a metade esquerda: o modelo passa a ocupar o centro
        horizontal. Por isso o texto desce para a faixa de baixo e a caixa passa a ocupar a largura
-       inteira. O escurecimento dessa faixa tem que vir queimado no recorte 4:5. */
+       inteira. O escurecimento dessa faixa vem queimado no recorte 9:16. */
     .hero { margin-top: 0; }
 
-    /* Hero de tela cheia com o recorte 9:16. 177.78vw é a altura que uma 9:16 tem na largura da
-       tela, então o min() faz a foto ocupar a tela inteira sem sobra e sem forçar rolagem.
+    /* Hero de tela cheia com o recorte 9:16.
+       Aqui havia um min(100svh, 177.78vw) que não cumpria o que prometia: 177.78vw é a altura de
+       uma 9:16 na largura da tela, e sempre que a tela é mais alta que isso o min() escolhia o
+       177.78vw e sobrava faixa preta embaixo. Num iPhone 12 Pro (390x844) dava 693px de hero para
+       844px de tela. 100svh preenche sempre, e o cover corta a largura, que é a sobra segura
+       porque o modelo está centralizado no recorte.
        svh e não dvh de propósito: com dvh a imagem redimensiona sozinha enquanto a pessoa rola,
-       porque a barra do navegador retrai, e o reflow aparece. Corte medido nos aparelhos comuns:
-       1,3% no Pixel 8, 5,7% no iPhone 15, 17% no iPhone SE, 29% no iPad mini. */
+       porque a barra do navegador retrai, e o reflow aparece na tela. */
     .hero-image {
         aspect-ratio: auto;
-        height: 177.78vw; /* fallback para browser sem svh */
-        height: min(100svh, 177.78vw);
+        height: 100vh; /* fallback para browser sem svh */
+        height: 100svh;
         max-height: none;
         object-position: center;
     }
