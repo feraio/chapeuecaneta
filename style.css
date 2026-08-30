@@ -83,11 +83,13 @@ header {
     object-position: center;
 }
 
+/* O eyebrow vem depois do bloco branco, colado nele: o respiro fica todo embaixo, antes do CTA.
+   O !important é porque ".hero p" tem especificidade maior e este elemento também é um <p>. */
 .hero-eyebrow {
     font-size: 0.85rem !important;
     letter-spacing: 2px !important;
     color: var(--primary-yellow);
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
 }
 
 /* Caixa de texto na metade livre da esquerda: margem de 5% e largura de 45%, o que mantém a
@@ -125,7 +127,7 @@ header {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 8px; /* pequeno: o eyebrow amarelo vem logo abaixo, encostado */
 }
 
 .cta-button {
@@ -303,9 +305,7 @@ header {
         height: 177.78vw; /* fallback para browser sem svh */
         height: min(100svh, 177.78vw);
         max-height: none;
-        /* PROVISÓRIO: enquanto a 9:16 não entra, reenquadra a 16:9 no modelo. Sai junto com o
-           <source>, porque com a 9:16 a imagem e a caixa têm a mesma proporção e isso vira inócuo. */
-        object-position: 85% center;
+        object-position: center;
     }
 
     .hero-content {
