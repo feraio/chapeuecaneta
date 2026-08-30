@@ -33,8 +33,11 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <!-- Os preloads das imagens de hero foram removidos junto com a foto da linha Lendas.
-         Quando entrar a foto nova, voltar com as duas linhas de preload e o background em .hero no style.css -->
+    <!-- Hero da coleção Resenha. Uma linha de preload por recorte, com o mesmo media dos <source>
+         do <picture>, para o browser baixar só o que vai usar. A segunda linha entra junto com o
+         export do 4:5, ver o comentário no <picture> lá embaixo. -->
+    <link rel="preload" as="image" href="assets/artes/resenha/hero.webp" media="(min-width: 769px)" fetchpriority="high">
+    <!-- <link rel="preload" as="image" href="assets/artes/resenha/hero-portrait.webp" media="(max-width: 768px)" fetchpriority="high"> -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR2CXXT31V"></script>
     <script>
@@ -92,9 +95,24 @@
     
     <main>
         <section class="hero">
+            <picture>
+                <!-- PENDENTE: descomentar junto com o preload no <head> quando o recorte 4:5 sair
+                     do .psd. Export: 1200x1500, WebP, modelo na metade de cima, gradiente de
+                     escurecimento queimado na faixa de baixo (transparente em 55% da altura,
+                     sólido em 100%). Enquanto não entra, o mobile cai na 16:9 com object-position
+                     85%, que enquadra o modelo mas deixa o texto sem fundo escuro. -->
+                <!-- <source media="(max-width: 768px)" srcset="assets/artes/resenha/hero-portrait.webp" width="1200" height="1500"> -->
+                <img
+                    src="assets/artes/resenha/hero.webp"
+                    alt="Homem de camiseta preta com a estampa Fominha, em pé numa rua com muro grafitado"
+                    class="hero-image"
+                    width="2854"
+                    height="1606"
+                    fetchpriority="high">
+            </picture>
             <div class="hero-content">
                 <p class="hero-eyebrow">Coleção Mestres da Resenha</p>
-                <h1>O JOGO CONTINUA<br>NA RESENHA.</h1>
+                <h1>A HISTÓRIA DO JOGO<br>CONTINUA NA RESENHA.</h1>
                 <p>Do craque ao banheira, a gente veste o seu futebol.</p>
                 <a href="https://loja.chapeuecaneta.com.br/chapeuecaneta/collections/varzea" class="cta-button">Ver a coleção</a>
             </div>
