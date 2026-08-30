@@ -288,6 +288,25 @@ header {
 @media (max-width: 768px) {
     .brand-logo { height: 28px; top: 20px; }
 
+    /* O topo da foto é céu claro, e o logo branco chega a 1,10:1 ali: é o pior contraste da
+       página inteira. Este é o único gradiente em CSS do hero, e ele não briga com a regra de não
+       escurecer duas vezes, porque o escurecimento queimado no arquivo só começa na metade de
+       baixo e este vive nos 150px do topo.
+       A opacidade fica constante nos primeiros 45% de propósito: o logo ocupa de 13% a 32% da
+       altura do gradiente, então ele pega 0.55 exatos em vez de um valor interpolado, o que torna
+       o contraste previsível. 0.55 leva o pior ponto de 1,10:1 para 5,10:1. */
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
     /* Em retrato a área livre deixa de ser a metade esquerda: o modelo passa a ocupar o centro
        horizontal. Por isso o texto desce para a faixa de baixo e a caixa passa a ocupar a largura
        inteira. O escurecimento dessa faixa vem queimado no recorte 9:16. */
