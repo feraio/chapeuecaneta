@@ -31,6 +31,13 @@
 
 html {
     scroll-behavior: smooth;
+    /* O carrossel de produtos estoura 21px para a direita em telas estreitas (341px de documento
+       numa tela de 320), e isso aparecia como faixa vazia à direita e abaixo do hero, que só
+       cobre os 320. Clipar aqui resolve sem tocar no Swiper: a largura do slide e quantos ficam
+       visíveis não mudam. clip é melhor que hidden porque não cria contexto de rolagem; quem não
+       suporta clip fica no hidden da linha anterior. */
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -83,13 +90,6 @@ header {
     object-position: center;
 }
 
-/* O nome da coleção vive dentro da frase, em amarelo, em vez de ser uma linha solta acima da
-   headline. Só cor e peso: nada de tamanho ou tracking próprios, senão quebra o ritmo da frase. */
-.hero-destaque {
-    color: var(--primary-yellow);
-    font-weight: 400;
-}
-
 /* Caixa de texto na metade livre da esquerda: margem de 5% e largura de 45%, o que mantém a
    headline fora do modelo, que está a 69% da largura. */
 .hero-content {
@@ -122,7 +122,7 @@ header {
 
 .hero p {
     font-size: clamp(0.95rem, 1.15vw, 1.25rem);
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0px;
     margin-bottom: 25px;
@@ -134,7 +134,7 @@ header {
     background-color: var(--primary-yellow);
     color: #111111;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: 1rem;
     border-radius: 999px;
@@ -321,7 +321,7 @@ header {
 
     /* Mesma conta, agora com a caixa a 90vw (100% menos os 5% de padding de cada lado):
        90vw / 13,61 = 6,6vw; 6,3vw deixa folga. */
-    .hero h1 { font-size: clamp(1.25rem, 6.3vw, 2.6rem); }
+    .hero h1 { font-size: clamp(1.05rem, 6.3vw, 2.6rem); }
     .hero p { text-wrap: balance; }
 
     .main-statement { font-size: 2rem; text-align: left; max-width: 100%; text-wrap: balance; }
