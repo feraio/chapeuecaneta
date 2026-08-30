@@ -109,7 +109,10 @@ header {
        da caixa dividida por 13,61, senão a linha quebra sozinha e viram três linhas em vez das
        duas da quebra forçada. Caixa de 45vw / 13,61 = 3,3vw; 3,1vw deixa folga. */
     font-size: clamp(1.4rem, 3.1vw, 3.2rem);
-    line-height: 1.1;
+    /* A Boldonse desenha as maiúsculas com ascent de 120% do corpo da fonte (156% quando tem
+       acento, como o Ó de HISTÓRIA). A folga real entre duas linhas é line-height menos 121%,
+       então qualquer valor abaixo de 1.21 faz os glifos se sobreporem. 1.4 deixa 19% de folga. */
+    line-height: 1.4;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: -0.01em; /* tracking -1% */
@@ -344,6 +347,11 @@ header {
 
 .hello-bar-link {
     color: var(--primary-yellow);
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 700;
+}
+
+.hello-bar-link:hover,
+.hello-bar-link:focus-visible {
+    text-decoration: underline;
 }
