@@ -293,9 +293,18 @@ header {
        inteira. O escurecimento dessa faixa tem que vir queimado no recorte 4:5. */
     .hero { margin-top: 0; }
 
+    /* Hero de tela cheia com o recorte 9:16. 177.78vw é a altura que uma 9:16 tem na largura da
+       tela, então o min() faz a foto ocupar a tela inteira sem sobra e sem forçar rolagem.
+       svh e não dvh de propósito: com dvh a imagem redimensiona sozinha enquanto a pessoa rola,
+       porque a barra do navegador retrai, e o reflow aparece. Corte medido nos aparelhos comuns:
+       1,3% no Pixel 8, 5,7% no iPhone 15, 17% no iPhone SE, 29% no iPad mini. */
     .hero-image {
-        aspect-ratio: 4 / 5;
+        aspect-ratio: auto;
+        height: 177.78vw; /* fallback para browser sem svh */
+        height: min(100svh, 177.78vw);
         max-height: none;
+        /* PROVISÓRIO: enquanto a 9:16 não entra, reenquadra a 16:9 no modelo. Sai junto com o
+           <source>, porque com a 9:16 a imagem e a caixa têm a mesma proporção e isso vira inócuo. */
         object-position: 85% center;
     }
 

@@ -96,12 +96,13 @@
     <main>
         <section class="hero">
             <picture>
-                <!-- PENDENTE: descomentar junto com o preload no <head> quando o recorte 4:5 sair
-                     do .psd. Export: 1200x1500, WebP, modelo na metade de cima, gradiente de
-                     escurecimento queimado na faixa de baixo (transparente em 55% da altura,
-                     sólido em 100%). Enquanto não entra, o mobile cai na 16:9 com object-position
-                     85%, que enquadra o modelo mas deixa o texto sem fundo escuro. -->
-                <!-- <source media="(max-width: 768px)" srcset="assets/artes/resenha/hero-portrait.webp" width="1200" height="1500"> -->
+                <!-- PENDENTE: descomentar junto com o preload no <head> quando o recorte 9:16 sair
+                     do .psd, e tirar o object-position provisório do style.css. Export: 1200x2134
+                     (9:16), WebP, gradiente de escurecimento queimado na faixa de baixo
+                     (transparente em 55% da altura, sólido em 100%), e modelo mais faixa de texto
+                     dentro dos 80% centrais na vertical, que é o que o iPhone SE e o iPad mini
+                     cortam. Enquanto não entra, o mobile cai na 16:9 e o texto fica sem fundo. -->
+                <!-- <source media="(max-width: 768px)" srcset="assets/artes/resenha/hero-portrait.webp" width="1200" height="2134"> -->
                 <img
                     src="assets/artes/resenha/hero.webp"
                     alt="Homem de camiseta preta com a estampa Fominha, em pé numa rua com muro grafitado"
