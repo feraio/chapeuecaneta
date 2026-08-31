@@ -83,15 +83,21 @@ header {
 /* Emenda entre a base da foto e o fundo do body, que sem isso é uma linha dura.
    Fica acima da imagem e abaixo do .hero-content (z-index 2), então nunca cobre texto nem CTA.
    O topo é rgba(17,17,17,0) e não "transparent" só para o gradiente não passar por um cinza
-   esmaecido no meio do caminho. */
+   esmaecido no meio do caminho.
+   O stop do meio fica abaixo da reta (0.30 em 55%, onde o linear daria 0.55): assim o
+   escurecimento demora mais a aparecer e fecha no fim, em vez de subir parelho desde o topo. É o
+   que tira a sensação de faixa. No desktop a base da 16:9 é asfalto em rgb(107,96,89), 3x mais
+   claro que o #111, e por isso precisa de bem mais percurso que o mobile. */
 .hero::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 200px;
-    background: linear-gradient(to bottom, rgba(17, 17, 17, 0), var(--bg-black));
+    /* o teto de 45% evita que em janela baixa o fade coma quase a imagem inteira: com 340px fixo
+       ele cobria 36% num 1920x950 mas 79% num 769x433 */
+    height: min(340px, 45%);
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.3) 55%, var(--bg-black));
     pointer-events: none;
     z-index: 1;
 }
