@@ -292,10 +292,15 @@ header {
        página inteira. Este é o único gradiente em CSS do hero, e ele não briga com a regra de não
        escurecer duas vezes, porque o escurecimento queimado no arquivo só começa na metade de
        baixo e este vive nos 150px do topo.
-       A opacidade fica constante nos primeiros 45% de propósito: o logo ocupa de 13% a 32% da
-       altura do gradiente, então ele pega o valor cheio em vez de um interpolado, o que torna o
-       contraste previsível. Uma cor só nos dois stops, também de propósito: variar o matiz ao
-       longo do gradiente não agrega e é candidata a banding em telas de 8 bits.
+       A opacidade fica cheia até 22%, que é exatamente onde o logo termina (48px de 220px): assim
+       ele pega 0.70 exatos em vez de um valor interpolado, e o contraste fica previsível.
+       Do fim do logo em diante a queda segue uma smoothstep em vez de uma rampa reta. Uma rampa
+       linear tem quebra de inclinação onde começa e onde termina, e o olho lê essas duas quebras
+       como bordas: era isso que fazia o scrim parecer um bloco em vez de uma sombra. A smoothstep
+       tem derivada zero nas duas pontas, então nasce e morre sem linha visível. Os stops
+       intermediários também reduzem banding em telas de 8 bits.
+       Uma cor só em todos os stops, de propósito: variar o matiz ao longo do gradiente não agrega
+       e é outra fonte de banding.
        A cor é quente para casar com a foto, e por isso a opacidade é 0.70 e não 0.55. Um scrim
        cromático custa contraste: o canal vermelho carrega luminância, e esta mesma cor a 55%
        deixaria o pior ponto em 3,84:1 contra 5,10:1 de um preto na mesma opacidade. A 0.70 o pior
@@ -308,8 +313,20 @@ header {
         top: 0;
         left: 0;
         width: 100%;
-        height: 150px;
-        background: linear-gradient(to bottom, rgba(59, 32, 6, 0.7) 0%, rgba(59, 32, 6, 0.7) 45%, transparent 100%);
+        height: 220px;
+        background: linear-gradient(to bottom,
+            rgba(59, 32, 6, 0.7) 0%,
+            rgba(59, 32, 6, 0.7) 22%,
+            rgba(59, 32, 6, 0.680) 30%,
+            rgba(59, 32, 6, 0.627) 37%,
+            rgba(59, 32, 6, 0.549) 45%,
+            rgba(59, 32, 6, 0.454) 53%,
+            rgba(59, 32, 6, 0.350) 61%,
+            rgba(59, 32, 6, 0.246) 69%,
+            rgba(59, 32, 6, 0.151) 77%,
+            rgba(59, 32, 6, 0.073) 84%,
+            rgba(59, 32, 6, 0.020) 92%,
+            rgba(59, 32, 6, 0) 100%);
         pointer-events: none;
         z-index: -1;
     }
